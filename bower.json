@@ -1,0 +1,26 @@
+{
+  "name": "Angular Backbone",
+  "authors": [
+    "Mayank Bansal <sunny.bansal@gmail.com>"
+  ],
+  "description": "Scripts & Router for Basic App",
+  "main": "index.html",
+  "license": "CC",
+  "homepage": "https://www.github.com/mankybansal/ng-backbone",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "font-awesome": "fontawesome#^4.7.0",
+    "ngstorage": "ng-storage#^0.4.2",
+    "jquery": "^3.1.1",
+    "angular-route": "^1.6.1",
+    "animate.css": "^3.5.2",
+    "angular-scroll": "^1.0.0"
+  }
+}
