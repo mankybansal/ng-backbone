@@ -1,18 +1,35 @@
 <html>
 
 <head>
-    <script src="bower_components/angular/angular.js"></script>
+
+    <title></title>
+    <!-- REQUIRED CSS FILES -->
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <link href="bower_components/animate.css/animate.css" type="text/css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+
+    <!-- REQUIRED JAVASCRIPT FILES -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
 
     <script>
-
-        $(document).ready(function(){
-           debuggable("TRUE",function(){
-               console.log("HELLO");
-           })
-        });
+        // JQUERY OR APP INIT
     </script>
 
 </head>
+
+<body>
+
+<div ng-app="myApp">
+
+    <div class="viewPanel" ng-view></div>
+
+</div>
+
+</body>
+
 </html>

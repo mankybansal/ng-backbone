@@ -9,15 +9,16 @@ var myApp = {
     currentUser: null,
     requireLogin: false,
     pages: {
-        home: 0
+        home: 0,
+        notFound: 1
     },
     userRoles: {
         admin: 0
     }
 };
 
-function debuggable(status ,callback){
-    if(myApp.debug) {
+function debuggable(status, callback) {
+    if (myApp.debug) {
         console.log("--------- DEBUGGER ---------");
         console.log("STATUS: " + status);
         callback && callback();
@@ -26,6 +27,26 @@ function debuggable(status ,callback){
 }
 
 myApp.angular = angular.module('myApp', ['ngStorage', 'ngRoute', 'duScroll']);
+
+myApp.angular.config(function ($routeProvider) {
+    $routeProvider
+        .when("/", {
+            templateUrl: "templates/home.html",
+            controller: "homeControl"
+        })
+        .otherwise({
+            templateUrl: "templates/404.html",
+            controller: "notFoundControl"
+        });
+});
+
+myApp.angular.controller("homeControl", function ($scope) {
+
+});
+
+myApp.angular.controller("notFoundControl", function ($scope) {
+
+});
 
 myApp.angular.directive('myAppControl', function () {
 
@@ -53,7 +74,7 @@ myApp.angular.directive('myAppControl', function () {
                     timeout: 25000,
                     success: function (response) {
                         $scope.safeApply(function () {
-                            debuggable("SUCCESS",function(){
+                            debuggable("SUCCESS", function () {
                                 console.log(response);
                             });
                             callback && callback(response);
@@ -61,7 +82,7 @@ myApp.angular.directive('myAppControl', function () {
                     },
                     error: function (response) {
                         $scope.safeApply(function () {
-                            debuggable("ERROR",function(){
+                            debuggable("ERROR", function () {
                                 console.log(response);
                             });
                             callback && callback(response);
@@ -97,8 +118,7 @@ myApp.angular.directive('myAppControl', function () {
     };
 });
 
-
-casanylaApp.angular.directive('userControl', function () {
+myApp.angular.directive('userControl', function () {
     return {
         controller: function ($scope, $localStorage) {
 
@@ -161,7 +181,7 @@ casanylaApp.angular.directive('userControl', function () {
                 $scope.guest = {};
                 casanylaApp.currentUser = null;
 
-                if(casanylaApp.requireLogin) {
+                if (casanylaApp.requireLogin) {
                     $scope.requireLogin = true;
                     setTimeout(function () {
                         $('.loginOverlay').fadeIn(500);
