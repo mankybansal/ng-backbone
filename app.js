@@ -35,7 +35,7 @@ myApp.angular.config(function ($routeProvider) {
             controller: "homeControl"
         })
         .otherwise({
-            templateUrl: "templates/404.html",
+            templateUrl: "templates/not-found.html",
             controller: "notFoundControl"
         });
 });

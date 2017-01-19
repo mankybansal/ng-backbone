@@ -12,3 +12,21 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+.section {
+    width: 100%;
+    height: 100%;
+}
+
+.home-section {
+    padding: 50px;
+    box-sizing: border-box;
+    font-size: 50px;
+    text-align: center;
+}
+.not-found-section {
+    padding: 50px;
+    box-sizing: border-box;
+    font-size: 50px;
+    text-align: center;
+}
